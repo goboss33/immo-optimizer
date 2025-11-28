@@ -77,7 +77,7 @@ async function fileToGenerativePart(file: File): Promise<{ inlineData: { data: s
 }
 
 export async function processDocument(file: File): Promise<ExtractedData> {
-    const model = genAI.getGenerativeModel({ model: "gemini-3-pro-preview" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
     const systemPrompt = `
     Tu es un assistant administratif notaire expert.
