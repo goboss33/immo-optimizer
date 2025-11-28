@@ -1,19 +1,5 @@
 export type UrgencyScore = number; // 0-100
 
-export interface PropertyAd {
-  id: string;
-  sourceUrl: string;
-  sourcePlatform: string; // 'leboncoin', 'seloger', etc.
-  title: string;
-  description: string;
-  price: number;
-  location: string;
-  publishedAt: Date;
-  scrapedAt: Date;
-  images: string[];
-  isAnalyzed: boolean;
-}
-
 export interface AnalysisResult {
   urgencyScore: UrgencyScore;
   urgencyReasoning: string; // Pourquoi ce score ?
@@ -31,6 +17,21 @@ export interface AnalysisResult {
       lng: number;
     };
   };
+}
+
+export interface PropertyAd {
+  id: string;
+  sourceUrl: string;
+  sourcePlatform: string; // 'leboncoin', 'seloger', etc.
+  title: string;
+  description: string;
+  price: number;
+  location: string;
+  publishedAt: Date;
+  scrapedAt: Date;
+  images: string[];
+  isAnalyzed: boolean;
+  analysis?: AnalysisResult;
 }
 
 export interface Lead {
